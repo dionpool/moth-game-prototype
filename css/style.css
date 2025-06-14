@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html, body {
+   font-family: Inter, sans-serif;
+}
+
+body {
+   margin: 0;
+   background: #000;
+   overflow: hidden;
+}
+
+.glow {
+   position: absolute;
+   width: 150px;
+   height: 150px;
+   background: radial-gradient(circle,
+               rgba(255, 255, 200, 0.9) 10%,
+               rgba(255, 200, 100, 0.6) 40%,
+               rgba(0, 0, 0, 0) 80%);
+   border-radius: 50%;
+   pointer-events: none;
+   transform: translate(-50%, -50%);
+   filter: blur(15px);
+}
+
+.moth {
+   position: absolute;
+   width: 50px;
+   transition: transform 1s linear;
+}
+
+.hidden {
+   display: none;
+}
+
+#popup-container {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1000;
+}
+
+.popup-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: #fff;
+   border-radius: 4px;
+   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+   width: 90%;
+   max-width: 500px;
+   overflow: hidden;
+}
+
+.popup-header {
+   padding: 15px 20px;
+   background-color: #f5f5f5;
+   border-bottom: 1px solid #ddd;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.popup-header h3 {
+   margin: 0;
+   font-weight: 600;
+}
+
+.close-popup {
+   font-size: 24px;
+   cursor: pointer;
+   color: #666;
+}
+
+.close-popup:hover {
+   color: #333;
+}
+
+.popup-content {
+   font-size: 1rem;
+   font-weight: 300;
+   padding: 20px;
+   line-height: 1.5;
+}
+
+.popup-content h4,
+.popup-content ul {
+   margin-bottom: 0;
+}
+
+.popup-content p {
+   margin-top: 0;
+}
+
+.popup-content ul {
+   margin-top: 2px;
+}
+
+.popup-footer {
+   padding: 15px 20px;
+   border-top: 1px solid #ddd;
+   text-align: right;
+}
+
+.popup-button {
+   padding: 8px 16px;
+   background-color: #4285f4;
+   color: #fff;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 14px;
+}
+
+.popup-button:hover {
+   background-color: #3367d6;
+}
+
+.button-group {
+   display: flex;
+   gap: 10px;
+   position: absolute;
+   bottom: 25px;
+   right: 25px;
+}
+
+.button{
+   font-size: 1rem;
+   text-decoration: none;
+   display: block;
+   width: fit-content;
+   background-color: #4285f4;
+   outline: none;
+   border-radius: 4px;
+   padding: 12px 16px;
+   border: none;
+   color: #fff;
+   transition: background-color .2s;
+   cursor: pointer;
+}
+
+.button:hover {
+   background-color: #3367d6;
+}
+
+#kill-counter {
+   position: fixed;
+   top: 25px;
+   right: 25px;
+   font-size: 24px;
+   color: white;
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px;
+   border-radius: 5px;
+   font-family: Arial, sans-serif;
+}
