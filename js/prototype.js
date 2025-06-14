@@ -5,7 +5,8 @@ $(document).ready(function() {
    const mothData = [];
 
    let isGlowOn = true;
-   let killCount = 0
+   let killCount = 0;
+   let timerDuration = 20;
 
    function spawnMoth() {
       // Set the moth
@@ -36,9 +37,26 @@ $(document).ready(function() {
       });
    }
 
+   function startTimer() {
+      let timeLeft = timerDuration;
+      let timerInterval = setInterval(function() {
+         timeLeft--;
+
+         $('#timer').text(timeLeft + 's');
+
+         if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            showEndPopup()
+            isGlowOn = false;
+         }
+      }, 1000);
+   }
+
+   startTimer()
+
    function updateKillCounter() {
       killCount++;
-      $('#kill-counter').text('Aantal gedood: ' + killCount);
+      $('#end-popup-kills').text('Aantal gedood: ' + killCount);
    }
 
    // Create explosion effect
@@ -240,6 +258,67 @@ $(document).ready(function() {
          left: e.clientX + 'px',
          top: e.clientY + 'px'
       });
+   });
+
+   // Show info popup
+   function showInfoPopup() {
+      $('#info-popup-container').removeClass('hidden').hide().fadeIn(300);
+   }
+
+   // Close info popup
+   function closeInfoPopup() {
+      $('#info-popup-container').fadeOut(300);
+   }
+
+   // Close info button event
+   $('.close-info-popup, #info-popup-close-btn').on('click', function () {
+      closeInfoPopup();
+   });
+
+   // Close when click on info overlay
+   $('.info-popup-overlay').on('click', function () {
+      closeInfoPopup();
+   });
+
+   // Prevent closing when clicking on the info popup itself
+   $('.info-popup').on('click', function (e) {
+      e.stopPropagation()
+   });
+
+   // Show info popup on button click
+   $('#info-popup').on('click', function () {
+      showInfoPopup()
+   });
+
+   // Show end popup
+   function showEndPopup() {
+      $('#end-popup-container').removeClass('hidden').hide().fadeIn(300);
+   }
+
+   // Close end popup
+   function closeEndPopup() {
+      $('#end-popup-container').fadeOut(300);
+      location.reload()
+   }
+
+   // Close end button event
+   $('.close-end-popup, #end-popup-close-btn').on('click', function () {
+      closeEndPopup();
+   });
+
+   // Close when click on end overlay
+   $('.end-popup-overlay').on('click', function () {
+      closeEndPopup();
+   });
+
+   // Prevent closing when clicking on the end popup itself
+   $('.end-popup').on('click', function (e) {
+      e.stopPropagation()
+   });
+
+   // Show end popup on button click
+   $('#end-popup').on('click', function () {
+      showEndPopup()
    });
 
    // Start the moth animation

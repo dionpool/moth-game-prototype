@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Motten Game</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Timer -->
+<div id="timer">0s</div>
+
+<!-- Glow -->
+<div class="glow"></div>
+
+<!-- Game over popup -->
+<div id="end-popup-container" class="hidden">
+    <div class="end-popup-overlay"></div>
+
+    <div class="end-popup">
+        <div class="end-popup-header">
+            <h3 id="end-popup-title">Dit is wreed!</h3>
+            <span class="close-end-popup">&times;</span>
+        </div>
+
+        <div class="end-popup-content">
+            <p>Zo veel leven aangetrokken door één licht... En zo snel gedoofd... Vind je dat niet een beetje wreed?
+                Misschien tijd om even stil te staan bij de gevolgen...</p>
+            <h4>Aantal motten gedood</h4>
+            <p id="end-popup-kills">0 motten</p>
+        </div>
+
+        <div class="end-popup-footer">
+            <button id="info-popup" class="button">Informatie</button>
+        </div>
+    </div>
+</div>
+
+<!-- Information popup -->
+<div id="info-popup-container" class="hidden">
+    <div class="info-popup-overlay"></div>
+
+    <div class="info-popup">
+        <div class="info-popup-header">
+            <h3 id="info-popup-title">Motten en licht</h3>
+            <span class="close-info-popup">&times;</span>
+        </div>
+
+        <div class="info-popup-content">
+            <p>Motten staan bekend om hun vreemde gedrag: ze vliegen naar lichtbronnen toe, vaak met fatale gevolgen. Maar
+                waarom doen ze dit, en kunnen we er iets aan doen?</p>
+
+            <h4>Waarom vliegen motten naar het licht?</h4>
+            <p>Motten gebruiken normaal gesproken het maanlicht om zich te oriënteren. Ze vliegen in een rechte lijn door
+                het licht onder een vaste hoek te houden. Kunstmatige lichtbronnen, zoals lampen, verstoren dit
+                navigatiesysteem. In plaats van een rechte lijn te volgen, blijven ze rond de lichtbron cirkelen, totdat ze
+                uitgeput raken of verbranden.</p>
+
+            <h4>De gevolgen voor motten</h4>
+            <p>Veel motten sterven door uitputting of door de hitte van lampen. Dit kan schadelijk zijn voor het
+                ecosysteem,
+                want motten spelen een belangrijke rol als bestuivers en als voedselbron voor vogels en andere dieren.</p>
+
+            <h4>Wat kun je doen?</h4>
+            <ul>
+                <li>Gebruik warmgekleurde verlichting (zoals rood of geel), omdat motten hier minder op afkomen.</li>
+                <li>Plaats lampen slim door ze niet in de directe vliegroute van motten te zetten.</li>
+                <li>Gebruik bewegingssensoren, zodat lichten alleen aangaan wanneer nodig.</li>
+                <li>Schakel onnodige verlichting uit om motten en andere nachtelijke insecten te beschermen.</li>
+            </ul>
+
+            <p>Door bewust om te gaan met verlichting kunnen we het aantal mottensterftes verminderen en bijdragen aan een
+                gezonder ecosysteem.</p>
+        </div>
+
+        <div class="info-popup-footer">
+            <button id="info-popup-close-btn" class="info-popup-button">Sluiten</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/prototype.js"></script>
+</body>
+</html>
